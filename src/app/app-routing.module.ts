@@ -9,6 +9,7 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 // Import canActivate guard services
 import { AuthGuard } from "./shared/guard/auth.guard";
 import { SecureInnerPagesGuard } from "./shared/guard/secure-inner-pages.guard.ts.guard";
+import { RegisterBusComponent } from './components/register-bus/register-bus.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'register-user', component: SignUpComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'verify-email-address', component: VerifyEmailComponent }
+  { path: 'verify-email-address', component: VerifyEmailComponent },
+  { path: 'register-a-bus', component: RegisterBusComponent }
 ];
 
 @NgModule({
