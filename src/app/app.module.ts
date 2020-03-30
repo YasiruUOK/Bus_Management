@@ -20,6 +20,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /* Angular material */
 import { AngularMaterialModule } from './material.module';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { AddbusComponent } from './components/side-bar/addbus/addbus.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { BusService } from './shared/bus.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,9 @@ import { AngularMaterialModule } from './material.module';
     SignUpComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
-    RegisterBusComponent
+    RegisterBusComponent,
+    SideBarComponent,
+    AddbusComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -39,8 +46,11 @@ import { AngularMaterialModule } from './material.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AngularFireDatabaseModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, BusService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -10,6 +10,8 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { AuthGuard } from "./shared/guard/auth.guard";
 import { SecureInnerPagesGuard } from "./shared/guard/secure-inner-pages.guard.ts.guard";
 import { RegisterBusComponent } from './components/register-bus/register-bus.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { AddbusComponent } from './components/side-bar/addbus/addbus.component';
 
 
 const routes: Routes = [
@@ -19,7 +21,11 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'verify-email-address', component: VerifyEmailComponent },
-  { path: 'register-a-bus', component: RegisterBusComponent }
+  { path: 'register-a-bus', component: RegisterBusComponent },
+  { path: 'sidebar', component: SideBarComponent, children: [
+      { path: 'addbus', component: AddbusComponent }
+    ] 
+  }
 ];
 
 @NgModule({
