@@ -1,0 +1,88 @@
+<!-- Title group  -->
+<div class="title-group">
+  <h1 class="mat-h1">Edit Bus</h1>
+  <mat-divider fxFlex="1 0"></mat-divider>
+</div>
+
+<!-- Bus form -->
+<div class="inner-wrapper">
+  <form [formGroup]="editBusForm" (ngSubmit)="updateBus()" novalidate>
+    <mat-card>
+      <div class="controlers-wrapper">
+        <!--Bus number -->
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Bus number" formControlName="bus_number">
+            <mat-error *ngIf="handleError('bus_number', 'required')">
+              You must provide a<strong>bus number</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Owner Name -->
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Owner Name" formControlName="owner_name">
+            <mat-error *ngIf="handleError('owner_name', 'required')">
+              You must provide a<strong>owner name</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Route -->
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Route" formControlName="route">
+            <mat-error *ngIf="handleError('route', 'required')">
+              You must provide an <strong>route</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Register date -->
+          <mat-form-field>
+            <input matInput readonly [matDatepicker]="picker" placeholder="Registration date"
+              formControlName="register_date" (dateChange)="formatDate($event)">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="handleError('register_date', 'required')">
+              Registration date is required
+            </mat-error>
+          </mat-form-field>
+      </div>
+    </mat-card>
+
+    <!-- Right block -->
+    <mat-card>
+      <div class="controlers-wrapper">
+
+
+        <!-- Book stock -->
+        <div class="misc-bottom-padding">
+          <mat-label>Give Permision: </mat-label>
+          <mat-radio-group aria-label="Select an option" formControlName="permision">
+            <mat-radio-button value="Yes">Yes</mat-radio-button>
+            <mat-radio-button value="No">No</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <!-- Price -->
+        <div class="misc-bottom-padding">
+          <mat-form-field class="example-full-width">
+            <input type="number" matInput placeholder="Price" formControlName="price">
+            <mat-error *ngIf="handleError('price', 'required')">
+              You must provide an <strong>price</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+
+
+      </div>
+    </mat-card>
+
+    <!-- Submit & Reset -->
+    <mat-card>
+      <div class="full-wrapper button-wrapper">
+        <div class="button-wrapper">
+          <button mat-flat-button color="warn">Update</button>
+          <button mat-flat-button color="war" type="button" (click)="goBack()">Go Back</button>
+        </div>
+      </div>
+    </mat-card>
+  </form>
+</div>

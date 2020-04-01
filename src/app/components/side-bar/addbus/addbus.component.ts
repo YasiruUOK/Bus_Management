@@ -17,6 +17,8 @@ export class AddbusComponent implements OnInit {
   selectable = true;
   removable = true;
   addOnBlur = true;
+  @ViewChild('chipList' , {static: false}) chipList;
+  @ViewChild('resetBusForm', {static: false}) myNgForm;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   busForm: FormGroup;
 

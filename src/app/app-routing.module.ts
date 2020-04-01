@@ -12,6 +12,8 @@ import { SecureInnerPagesGuard } from "./shared/guard/secure-inner-pages.guard.t
 import { RegisterBusComponent } from './components/register-bus/register-bus.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { AddbusComponent } from './components/side-bar/addbus/addbus.component';
+import { ViewbusComponent } from './components/side-bar/viewbus/viewbus.component';
+import { EditbusComponent } from './components/side-bar/editbus/editbus.component';
 
 
 const routes: Routes = [
@@ -23,7 +25,9 @@ const routes: Routes = [
   { path: 'verify-email-address', component: VerifyEmailComponent },
   { path: 'register-a-bus', component: RegisterBusComponent },
   { path: 'sidebar', component: SideBarComponent, children: [
-      { path: 'addbus', component: AddbusComponent }
+      { path: 'addbus', component: AddbusComponent },
+      { path: 'viewbus', component: ViewbusComponent },
+      { path: 'editbus/:id', component: EditbusComponent }
     ] 
   }
 ];

@@ -54,7 +54,7 @@ export class BusService {
   }
 
   /* Delete book */
-  DeleteBook(id: string) {
+  DeleteBus(id: string) {
     this.busRef = this.db.object('buses-list/' + id);
     this.busRef.remove()
     .catch(error => {

@@ -25,6 +25,8 @@ import { AddbusComponent } from './components/side-bar/addbus/addbus.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { BusService } from './shared/bus.service';
+import { EditbusComponent } from './components/side-bar/editbus/editbus.component';
+import { ViewbusComponent } from './components/side-bar/viewbus/viewbus.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { BusService } from './shared/bus.service';
     VerifyEmailComponent,
     RegisterBusComponent,
     SideBarComponent,
-    AddbusComponent
+    AddbusComponent,
+    EditbusComponent,
+    ViewbusComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
